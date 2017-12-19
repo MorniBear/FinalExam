@@ -287,7 +287,7 @@
               </grid>
             </children>
           </grid>
-          <grid id="854c2" binding="bottomPanel" layout-manager="FlowLayout" hgap="0" vgap="0" flow-align="0">
+          <grid id="854c2" binding="bottomPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <minimum-size width="800" height="460"/>
@@ -304,7 +304,7 @@
             </border>
             <children>
               <grid id="787f0" binding="leftPanel" layout-manager="FlowLayout" hgap="0" vgap="0" flow-align="4">
-                <constraints/>
+                <constraints border-constraint="West"/>
                 <properties>
                   <background color="-12996609"/>
                   <maximumSize width="57" height="460"/>
@@ -474,10 +474,11 @@
                   </grid>
                 </children>
               </grid>
-              <grid id="a79c9" binding="cotainPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
-                <constraints/>
-                <properties/>
+              <grid id="a79c9" binding="containPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <background color="-1"/>
+                </properties>
                 <border type="none"/>
                 <children/>
               </grid>

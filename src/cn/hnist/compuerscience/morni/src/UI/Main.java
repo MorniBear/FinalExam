@@ -3,12 +3,15 @@ package UI;
  *
  */
 
+import ecardlogic.CardManager;
 import resource.ImageSource;
 
 import javax.swing.*;
 
 import java.awt.*;
 public class Main {
+    //加载 CardManager类
+    private CardManager cardManager = CardManager.getManager();
     //控件
     private  JPanel mainpanel;
     private  JButton buttonWindowsMin;
@@ -29,11 +32,19 @@ public class Main {
     private JButton buttonUser;
     private JPanel mainContainPanel;
     private JPanel topPanel;
-    private JPanel cotainPanel;
+    private JPanel containPanel;
     //静态类
     private static Main main= new Main();
     //入口方法
     public static void main(String[] args) {
+
+
+        JFrame frame = new JFrame("Main");
+        uiInit(frame);
+        buttonsActonListener(frame);
+
+}
+    static void uiInit(JFrame frame){
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException
@@ -41,20 +52,16 @@ public class Main {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        uiInit();
-        JFrame frame = new JFrame("Main");
         frame.setContentPane(main.mainpanel);
+        //设定启动时在屏幕的位置
         frame.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width/2-400,Toolkit.getDefaultToolkit().getScreenSize().height/2-250);
+        //设置windows客户区
         frame.setUndecorated(true);
+        //设置窗口不可变大小
         frame.setResizable(false);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
-        buttonsActonListener(frame);
-
-
-}
-    static void uiInit(){
         main.searchField.setBorder(null);
         main.buttonHome.setIcon(ImageSource.ICON_HOME_EN);
     }
@@ -65,7 +72,7 @@ public class Main {
         //关闭
         main.buttonWindewsClose.addActionListener(event->System.exit(0));
 
-        //四个左列表按钮
+        //四个左列表按钮，设置只有一个能为按下状态
         main.buttonHome.addActionListener(event->{
             main.buttonHome.setIcon(ImageSource.ICON_HOME_EN);
             main.buttonList.setIcon(ImageSource.ICON_LIST_UN);
@@ -92,5 +99,6 @@ public class Main {
         });
 
     }
+
 
 }

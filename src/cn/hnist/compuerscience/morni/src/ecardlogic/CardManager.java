@@ -7,12 +7,14 @@ import java.util.ArrayList;
  * @creat class Card
  * @date 2017.12.12
  * @update 2017.12.13 撰写方法基本模块
+ * @update 2017.12.18 新增like模块
  */
 //CardManager是一个单例模式的类
 public class CardManager {
 
     private static final CardManager manager = new CardManager();
     private ArrayList<Card> cardArrayList = new ArrayList<Card>();
+    private ArrayList<Card> likeArrayList = new ArrayList<Card>();
 
     private CardManager() {
     }
@@ -35,11 +37,11 @@ public class CardManager {
     }
 
     //查询功能
-    public int queryCard(String info) {
+    public int queryCard(String info,String message) {
         /**
          *注意检索条件info，应逐个检索
          */
-        return 0;
+        return OK;
     }
 
     //添加功能
@@ -73,7 +75,7 @@ public class CardManager {
         /**
          *
          */
-        return 0;
+        return OK;
     }
 
 
