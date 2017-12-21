@@ -474,13 +474,24 @@
                   </grid>
                 </children>
               </grid>
-              <grid id="a79c9" binding="containPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+              <grid id="a79c9" layout-manager="BorderLayout" hgap="0" vgap="0">
                 <constraints border-constraint="Center"/>
                 <properties>
                   <background color="-1"/>
                 </properties>
                 <border type="none"/>
-                <children/>
+                <children>
+                  <grid id="a6ffb" binding="containPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints border-constraint="West"/>
+                    <properties>
+                      <maximumSize width="743" height="460"/>
+                      <minimumSize width="743" height="460"/>
+                      <preferredSize width="743" height="460"/>
+                    </properties>
+                    <border type="none"/>
+                    <children/>
+                  </grid>
+                </children>
               </grid>
             </children>
           </grid>
