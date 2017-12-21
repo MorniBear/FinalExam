@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="80" y="20" width="747" height="464"/>
+      <xy x="80" y="20" width="447" height="464"/>
     </constraints>
     <properties>
       <background color="-131073"/>
@@ -11,12 +11,12 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="f0bb5" binding="homepanel" layout-manager="FlowLayout" hgap="0" vgap="0" flow-align="1">
+      <grid id="c23ae" binding="homepanel" layout-manager="FlowLayout" hgap="0" vgap="0" flow-align="2">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <minimum-size width="743" height="460"/>
-            <preferred-size width="743" height="460"/>
-            <maximum-size width="743" height="460"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="443" height="460"/>
+            <preferred-size width="443" height="460"/>
+            <maximum-size width="443" height="460"/>
           </grid>
         </constraints>
         <properties>
@@ -25,37 +25,101 @@
         </properties>
         <border type="none"/>
         <children>
-          <grid id="cb369" layout-manager="FlowLayout" hgap="0" vgap="0" flow-align="0">
+          <grid id="fe3c2" layout-manager="FlowLayout" hgap="20" vgap="20" flow-align="1">
             <constraints/>
             <properties>
               <background color="-1"/>
-              <maximumSize width="743" height="40"/>
-              <minimumSize width="743" height="40"/>
-              <preferredSize width="743" height="40"/>
+              <preferredSize width="443" height="435"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="e186c" class="javax.swing.JButton" binding="homeIcon">
+              <component id="1fab6" class="javax.swing.JButton" binding="buttonAdd">
                 <constraints/>
                 <properties>
-                  <alignmentY value="0.0"/>
+                  <background color="-1"/>
                   <borderPainted value="false"/>
                   <contentAreaFilled value="false"/>
-                  <defaultCapable value="false"/>
-                  <doubleBuffered value="false"/>
+                  <defaultCapable value="true"/>
                   <enabled value="true"/>
-                  <focusPainted value="false"/>
-                  <focusable value="false"/>
-                  <icon value="home_button.png"/>
+                  <foreground color="-1"/>
+                  <icon value="card_add.png"/>
                   <margin top="0" left="0" bottom="0" right="0"/>
-                  <requestFocusEnabled value="false"/>
+                  <minimumSize width="380" height="33"/>
+                  <preferredSize width="80" height="61"/>
                   <text value=""/>
-                  <verifyInputWhenFocusTarget value="false"/>
-                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="c1f08" class="javax.swing.JButton" binding="addlike">
+                <constraints/>
+                <properties>
+                  <background color="-1"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <foreground color="-1"/>
+                  <icon value="card_add.png"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <minimumSize width="380" height="33"/>
+                  <preferredSize width="80" height="61"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="18510" class="javax.swing.JButton">
+                <constraints/>
+                <properties>
+                  <background color="-1"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <foreground color="-1"/>
+                  <icon value="card_add.png"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <minimumSize width="380" height="33"/>
+                  <preferredSize width="80" height="61"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="e0bda" class="javax.swing.JButton">
+                <constraints/>
+                <properties>
+                  <background color="-1"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <foreground color="-1"/>
+                  <icon value="card_add.png"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <minimumSize width="380" height="33"/>
+                  <preferredSize width="80" height="61"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
           </grid>
+          <component id="3edd" class="javax.swing.JButton" binding="homeIcon">
+            <constraints/>
+            <properties>
+              <alignmentY value="0.0"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="false"/>
+              <defaultCapable value="false"/>
+              <doubleBuffered value="false"/>
+              <enabled value="true"/>
+              <focusPainted value="false"/>
+              <focusable value="false"/>
+              <horizontalTextPosition value="0"/>
+              <icon value="home_button.png"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <preferredSize width="40" height="20"/>
+              <requestFocusEnabled value="false"/>
+              <text value=""/>
+              <verifyInputWhenFocusTarget value="false"/>
+              <visible value="true"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>

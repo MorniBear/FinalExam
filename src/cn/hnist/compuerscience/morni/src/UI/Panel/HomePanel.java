@@ -4,8 +4,10 @@ import javax.swing.*;
 
 public class HomePanel{
 
-    private JPanel homepanel;
     public JPanel panel;
+    private JPanel homepanel;
     private JButton homeIcon;
+    private JButton buttonAdd;
+    private JButton addlike;
 
 }

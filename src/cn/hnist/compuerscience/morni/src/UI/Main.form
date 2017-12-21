@@ -14,8 +14,8 @@
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <minimum-size width="800" height="500"/>
-            <preferred-size width="800" height="500"/>
+            <minimum-size width="500" height="500"/>
+            <preferred-size width="500" height="500"/>
             <maximum-size width="800" height="500"/>
           </grid>
         </constraints>
@@ -32,8 +32,8 @@
           <grid id="40213" binding="topPanel" layout-manager="FlowLayout" hgap="0" vgap="0" flow-align="0">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <minimum-size width="800" height="40"/>
-                <preferred-size width="800" height="40"/>
+                <minimum-size width="500" height="40"/>
+                <preferred-size width="500" height="40"/>
                 <maximum-size width="800" height="40"/>
               </grid>
             </constraints>
@@ -50,7 +50,7 @@
                   <enabled value="true"/>
                   <maximumSize width="500" height="50"/>
                   <minimumSize width="500" height="50"/>
-                  <preferredSize width="500" height="50"/>
+                  <preferredSize width="400" height="50"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -223,7 +223,7 @@
                   <background color="-12996609"/>
                   <maximumSize width="300" height="50"/>
                   <minimumSize width="300" height="50"/>
-                  <preferredSize width="300" height="50"/>
+                  <preferredSize width="100" height="50"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -241,9 +241,9 @@
                       <icon value="icon_window_min.png"/>
                       <iconTextGap value="0"/>
                       <margin top="0" left="10" bottom="0" right="8"/>
-                      <maximumSize width="50" height="50"/>
+                      <maximumSize width="50" height="40"/>
                       <minimumSize width="50" height="50"/>
-                      <preferredSize width="50" height="50"/>
+                      <preferredSize width="40" height="50"/>
                       <rolloverIcon value="icon_window_min_un.png"/>
                       <rolloverSelectedIcon value="icon_window_min_un.png"/>
                       <selectedIcon value="icon_window_min_un.png"/>
@@ -270,7 +270,7 @@
                       <maximumSize width="50" height="50"/>
                       <minimumSize width="50" height="50"/>
                       <opaque value="false"/>
-                      <preferredSize width="50" height="50"/>
+                      <preferredSize width="40" height="50"/>
                       <pressedIcon value="icon_window_close_un.png"/>
                       <requestFocusEnabled value="true"/>
                       <rolloverEnabled value="true"/>
@@ -484,9 +484,9 @@
                   <grid id="a6ffb" binding="containPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
                     <constraints border-constraint="West"/>
                     <properties>
-                      <maximumSize width="743" height="460"/>
-                      <minimumSize width="743" height="460"/>
-                      <preferredSize width="743" height="460"/>
+                      <maximumSize width="443" height="460"/>
+                      <minimumSize width="443" height="460"/>
+                      <preferredSize width="443" height="460"/>
                     </properties>
                     <border type="none"/>
                     <children/>

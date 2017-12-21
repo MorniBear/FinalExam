@@ -76,7 +76,7 @@ public class Main {
         }
         frame.setContentPane(main.mainpanel);
         //设定启动时在屏幕的位置
-        frame.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width / 2 - 400, Toolkit.getDefaultToolkit().getScreenSize().height / 2 - 250);
+        frame.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width / 2 - 250, Toolkit.getDefaultToolkit().getScreenSize().height / 2 - 250);
         //设置windows客户区
         frame.setUndecorated(true);
         //设置窗口不可变大小
