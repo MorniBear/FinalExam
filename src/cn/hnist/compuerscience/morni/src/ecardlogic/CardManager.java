@@ -12,21 +12,21 @@ import java.util.ArrayList;
 //CardManager是一个单例模式的类
 public class CardManager {
 
-    private static final CardManager manager = new CardManager();
-    private ArrayList<Card> cardArrayList = new ArrayList<Card>();
+    private static final CardManager manager = new CardManager();private ArrayList<Card> cardArrayList = new ArrayList<Card>();
+
     private ArrayList<Card> likeArrayList = new ArrayList<Card>();
 
     private CardManager() {
     }
 
-    //返回值常量
+    //返回值常量info
     public static final int OK = 14162400;
     public static final int NAME_SAME_UPDATE = 14162401;
     public static final int NAME_SAME_ADDNEW = 14162402;
     public static final int ALL_SAME = 14162403;
 
 
-    //单例模式get对象
+    //    //单例模式get对象
     public static CardManager getManager() {
         return manager;
     }
@@ -37,7 +37,7 @@ public class CardManager {
     }
 
     //查询功能
-    public int queryCard(String info,String message) {
+    public int queryCard(String key,String info) {
         /**
          *注意检索条件info，应逐个检索
          */

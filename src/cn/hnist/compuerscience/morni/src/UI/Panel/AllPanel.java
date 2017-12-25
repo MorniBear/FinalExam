@@ -7,4 +7,5 @@ public class AllPanel {
     private JPanel allrpanel;
     private JButton allIcon;
     private JScrollPane allScrollPane;
+    private JButton aButton;
 }

@@ -3,12 +3,11 @@ package UI;
  * @update 2017.12.16 基本UI框架
  * @update 2017.12.20 四大panel界面
  * @update 2017.12.21 鼠标拖动事件 搜索按钮监听
+ * @UPDATA 2017.12.24 完善搜索按钮监听,添加增加按钮
  */
 
-import UI.Panel.AllPanel;
-import UI.Panel.HomePanel;
-import UI.Panel.LikePanel;
-import UI.Panel.UserPanel;
+import UI.Dialog.addDialog;
+import UI.Panel.*;
 import ecardlogic.CardManager;
 import resource.ImageSource;
 
@@ -18,39 +17,46 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Main {
+
+    //添加名片
+    JPanel registerPanel = new registerPanel().init();
+    //搜索结果
+    JPanel resultPanel = new ResultPanel().init();
     //鼠标坐标
     private int xOld = 0, yOld = 0;
     //四个Panel
-    JPanel homePanel = new HomePanel().panel;
-    JPanel allPanel = new AllPanel().panel;
-    JPanel userPanel = new UserPanel().panel;
-    JPanel likePanel = new LikePanel().panel;
+    public JPanel homePanel = new HomePanel().panel;
+    public JPanel allPanel = new AllPanel().panel;
+    public JPanel userPanel = new UserPanel().panel;
+    public JPanel likePanel = new LikePanel().panel;
     //加载 CardManager类
     private CardManager cardManager = CardManager.getManager();
     //控件
-    private  JPanel mainpanel;
-    private  JButton buttonWindowsMin;
-    private  JButton buttonWindewsClose;
-    private  JComboBox keyChoice;
-    private  JButton icon;
-    private  JButton iconName;
-    private  JButton buttonSearch;
-    private  JPanel toppanelL;
-    private  JPanel toppanelR;
-    private  JTextField searchField;
+    private JPanel mainpanel;
+    private JButton buttonWindowsMin;
+    private JButton buttonWindewsClose;
+    private JComboBox keyChoice;
+    private JButton icon;
+    private JButton iconName;
+    private JButton buttonSearch;
+    private JPanel toppanelL;
+    private JPanel toppanelR;
+    private JTextField searchField;
     private JPanel bottomPanel;
     private JPanel leftPanel;
     //左边列表按钮
-    private JButton buttonHome;
-    private JButton buttonList;
-    private JButton buttonLike;
-    private JButton buttonUser;
+    public JButton buttonHome;
+    public JButton buttonList;
+    public JButton buttonLike;
+    public JButton buttonUser;
     private JPanel mainContainPanel;
-    private JPanel topPanel;
-    private JPanel containPanel;
+    public JPanel topPanel;
+    public JPanel containPanel;
+    private JButton add;
     //静态类
-    private static Main main= new Main();
-    private static JFrame frame = new JFrame("Main");
+    public static Main main = new Main();
+    public static JFrame frame = new JFrame("Main");
+
     //入口方法
     public static void main(String[] args) {
         //防止线程问题
@@ -89,6 +95,7 @@ public class Main {
         main.containPanel.add(main.homePanel);
         main.containPanel.updateUI();
         frame.setVisible(true);
+        addDialog.startDialog();
 
     }
 
@@ -111,9 +118,18 @@ public class Main {
                 main.buttonList.setIcon(ImageSource.ICON_LIST_UN);
                 main.buttonLike.setIcon(ImageSource.ICON_LIKE_UN);
                 main.buttonUser.setIcon(ImageSource.ICON_USER_UN);
-                main.containPanel.removeAll();
-                main.containPanel.add(main.homePanel);
-                main.containPanel.updateUI();
+                if (!ResultPanel.flag) {
+                    main.containPanel.removeAll();
+                    main.containPanel.add(main.homePanel);
+                    main.containPanel.updateUI();
+                } else {
+                    /**
+                     * 此处为了使界面更加人性化，搜索按钮和添加都放在了主页上
+                     */
+                    main.containPanel.removeAll();
+                    main.containPanel.add(main.resultPanel);
+                    main.containPanel.updateUI();
+                }
             }
         });
         main.buttonList.addActionListener(event -> {
@@ -157,7 +173,6 @@ public class Main {
             }
         });
         //----------------------------------------------------------
-
 
 
         //搜索输入框 点击时候 默认文字删除 离开时候恢复
@@ -233,7 +248,6 @@ public class Main {
         //----------------------------------------------------------
 
 
-
         //topPanel 可以鼠标拖动
         main.topPanel.addMouseListener(new MouseAdapter() {
             @Override
@@ -251,21 +265,62 @@ public class Main {
                         e.getYOnScreen() - main.yOld);
             }
         });
+        main.iconName.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //获得鼠标的位置
+                main.xOld = e.getX();
+                main.yOld = e.getY();
+            }
+        });
+        main.iconName.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                //鼠标移动时
+                frame.setLocation(e.getXOnScreen() - main.xOld,
+                        e.getYOnScreen() - main.yOld);
+            }
+        });
+        main.icon.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //获得鼠标的位置
+                main.xOld = e.getX();
+                main.yOld = e.getY();
+            }
+        });
+        main.icon.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                //鼠标移动时
+                frame.setLocation(e.getXOnScreen() - main.xOld,
+                        e.getYOnScreen() - main.yOld);
+            }
+        });
         //-----------------------------------------------------------
 
 
-
         //搜索按钮
-        main.buttonSearch.addActionListener(event ->{
+        main.buttonSearch.addActionListener(event -> {
+
             String key = main.keyChoice.getModel().getSelectedItem().toString();
-            if(!(main.searchField.getText().equals("")||main.searchField.getText().equals("请输入搜索内容"))) {
+            if (!(main.searchField.getText().equals("") || main.searchField.getText().equals("请输入搜索内容"))) {
+                /**
+                 * 此处为了使界面更加人性化，搜索按钮和添加都放在了主页上
+                 */
+                main.buttonHome.setIcon(ImageSource.ICON_HOME_EN);
+                main.buttonList.setIcon(ImageSource.ICON_LIST_UN);
+                main.buttonLike.setIcon(ImageSource.ICON_LIKE_UN);
+                main.buttonUser.setIcon(ImageSource.ICON_USER_UN);
+                main.containPanel.removeAll();
+                main.containPanel.add(main.resultPanel);
+                main.containPanel.updateUI();
+                ResultPanel.flag = true;
                 String keyword = main.searchField.getText();
             }
             //// TODO: 未完成
-
-        } );
-
-
+        });
+        //回车搜索
     }
 
 

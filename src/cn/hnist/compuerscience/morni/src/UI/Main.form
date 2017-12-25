@@ -161,7 +161,7 @@
                       <maximumSize width="150" height="22"/>
                       <minimumSize width="150" height="22"/>
                       <opaque value="true"/>
-                      <preferredSize width="150" height="22"/>
+                      <preferredSize width="130" height="22"/>
                       <requestFocusEnabled value="true"/>
                       <selectedTextColor color="-15111791"/>
                       <text value="请输入搜索内容"/>
@@ -201,13 +201,55 @@
                           <maximumSize width="68" height="22"/>
                           <minimumSize width="68" height="22"/>
                           <opaque value="false"/>
-                          <preferredSize width="58" height="22"/>
+                          <preferredSize width="22" height="22"/>
                           <pressedIcon value="searchbutton4.png"/>
                           <requestFocusEnabled value="true"/>
                           <rolloverEnabled value="true"/>
                           <rolloverIcon value="searchbutton4.png"/>
                           <rolloverSelectedIcon value="searchbutton4.png"/>
                           <selectedIcon value="searchbutton4.png"/>
+                          <text value=""/>
+                          <verifyInputWhenFocusTarget value="true"/>
+                          <visible value="true"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="c853e" layout-manager="FlowLayout" hgap="0" vgap="0" flow-align="1">
+                    <constraints/>
+                    <properties>
+                      <background color="-15111791"/>
+                      <preferredSize width="22" height="22"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="67d" class="javax.swing.JButton" binding="add">
+                        <constraints/>
+                        <properties>
+                          <autoscrolls value="true"/>
+                          <background color="-15111791"/>
+                          <borderPainted value="false"/>
+                          <contentAreaFilled value="false"/>
+                          <defaultCapable value="false"/>
+                          <enabled value="true"/>
+                          <focusPainted value="false"/>
+                          <focusable value="true"/>
+                          <font size="14" style="1"/>
+                          <foreground color="-1"/>
+                          <icon value="icon_addcardun.png"/>
+                          <inheritsPopupMenu value="false"/>
+                          <label value=""/>
+                          <margin top="0" left="0" bottom="0" right="0"/>
+                          <maximumSize width="68" height="22"/>
+                          <minimumSize width="68" height="22"/>
+                          <opaque value="false"/>
+                          <preferredSize width="22" height="22"/>
+                          <pressedIcon value="icon_addcard.png"/>
+                          <requestFocusEnabled value="true"/>
+                          <rolloverEnabled value="false"/>
+                          <rolloverIcon value="icon_addcard.png"/>
+                          <rolloverSelectedIcon value="icon_addcard.png"/>
+                          <selectedIcon value="icon_addcard.png"/>
                           <text value=""/>
                           <verifyInputWhenFocusTarget value="true"/>
                           <visible value="true"/>
