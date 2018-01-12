@@ -13,4 +13,5 @@ public class ImageSource {
     public static final ImageIcon ICON_LIST_EN= new ImageIcon(Main.class.getResource("/icon_list_en.png"));
     public static final ImageIcon ICON_USER_UN= new ImageIcon(Main.class.getResource("/icon_user_un.png"));
     public static final ImageIcon ICON_USER_EN= new ImageIcon(Main.class.getResource("/icon_user_en.png"));
+    public static final ImageIcon ICON_EXE= new ImageIcon(Main.class.getResource("/cardicon5.png"));
 }

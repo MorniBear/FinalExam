@@ -1,6 +1,7 @@
 package ecardlogic;
 
 import java.awt.*;
+import java.io.*;
 
 /**
  * @author Morni
@@ -8,7 +9,7 @@ import java.awt.*;
  * @date 2017.12.12
  * @update 2017.12.21 增加打开次数
  */
-public class Card {
+public class Card implements Serializable {
     //公司名称
     private String companyName;
     //公司地址
@@ -27,10 +28,8 @@ public class Card {
     private String eMail;
     //网页
     private String web;
-    //背景颜色
-    private Color backgroundColor;
     //打开次数
-    private int openTimes;
+    public int openTimes;
 
     //构造方法
     public Card() {
@@ -43,11 +42,19 @@ public class Card {
         this.fax = null;
         this.eMail = null;
         this.web = null;
-        this.backgroundColor = null;
         this.openTimes = 0;
     }
 
-    public Card(String companyName, String address, String personalName, String position, String tel, String phone, String fax, String eMail, String web, Color backgroundColor, int openTimes) {
+    public Card(String companyName,
+                String address,
+                String personalName,
+                String position,
+                String tel,
+                String phone,
+                String fax,
+                String eMail,
+                String web,
+                int openTimes) {
         this.companyName = companyName;
         this.address = address;
         this.personalName = personalName;
@@ -57,7 +64,6 @@ public class Card {
         this.fax = fax;
         this.eMail = eMail;
         this.web = web;
-        this.backgroundColor = backgroundColor;
         this.openTimes = openTimes;
     }
 
@@ -142,11 +148,8 @@ public class Card {
         this.web = web;
     }
 
-    public Color getBackgroundColor() {
-        return backgroundColor;
-    }
-
-    public void setBackgroundColor(Color backgroundColor) {
-        this.backgroundColor = backgroundColor;
+    @Override
+    public String toString() {
+        return personalName+"           "+companyName+"                 "+phone;
     }
 }

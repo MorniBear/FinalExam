@@ -1,27 +1,31 @@
 package UI.Dialog;
 
 import UI.Main;
+import ecardlogic.Card;
 
 import javax.swing.*;
 import java.awt.event.*;
 
 public class addDialog extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
+    private JButton buttonUpdate;
+    private JButton buttonNew;
+    private JTextPane textPane;
+    private Card carder;
+    int old;
 
     public addDialog() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        getRootPane().setDefaultButton(buttonUpdate);
 
-        buttonOK.addActionListener(new ActionListener() {
+        buttonUpdate.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
             }
         });
 
-        buttonCancel.addActionListener(new ActionListener() {
+        buttonNew.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
@@ -44,21 +48,31 @@ public class addDialog extends JDialog {
     }
 
     private void onOK() {
-        // add your code here
+        Main.cardManager.getcardArrayList().get(old).setAddress(carder.getAddress());
+        Main.cardManager.getcardArrayList().get(old).setPersonalName(carder.getPersonalName());
+        Main.cardManager.getcardArrayList().get(old).setCompanyName(carder.getCompanyName());
+        Main.cardManager.getcardArrayList().get(old).seteMail(carder.geteMail());
+        Main.cardManager.getcardArrayList().get(old).setPhone(carder.getPhone());
+        Main.cardManager.getcardArrayList().get(old).setFax(carder.getFax());
+        Main.cardManager.getcardArrayList().get(old).setPosition(carder.getPosition());
+        Main.cardManager.getcardArrayList().get(old).setTel(carder.getTel());
+        Main.cardManager.getcardArrayList().get(old).setWeb(carder.getWeb());
         dispose();
     }
 
     private void onCancel() {
-        // add your code here if necessary
+        Main.main.cardManager.getcardArrayList().add(carder);
         dispose();
     }
 
-    public static void startDialog() {
+    public static void startDialog(String text, Card card, int old) {
         addDialog dialog = new addDialog();
         dialog.pack();
-        dialog.setLocation(Main.frame.getLocation().x+90,Main.frame.getLocation().y+150);
+        dialog.setLocation(Main.frame.getLocation().x + 90, Main.frame.getLocation().y + 150);
         dialog.setResizable(false);
+        dialog.textPane.setText(text);
+        dialog.carder = card;
+        dialog.old = old;
         dialog.setVisible(true);
-
     }
 }

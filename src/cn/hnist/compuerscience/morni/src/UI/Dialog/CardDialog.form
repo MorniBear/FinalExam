@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="UI.Dialog.CardDialog">
+  <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="700" y="220" width="938" height="208"/>
+    </constraints>
+    <properties>
+      <background color="-12996609"/>
+      <font size="12" style="1"/>
+      <foreground color="-1"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="2369b" binding="panel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12996609"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="8cfdc" layout-manager="GridLayoutManager" row-count="6" column-count="14" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="500" height="200"/>
+                <preferred-size width="500" height="200"/>
+                <maximum-size width="500" height="200"/>
+              </grid>
+            </constraints>
+            <properties>
+              <alignmentX value="0.0"/>
+              <alignmentY value="0.0"/>
+              <background color="-12996609"/>
+              <font style="1"/>
+              <foreground color="-1"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="7f186" class="javax.swing.JTextField" binding="faxField">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-15111791"/>
+                  <caretColor color="-131073"/>
+                  <font style="1"/>
+                  <foreground color="-131073"/>
+                </properties>
+              </component>
+              <component id="e38a3" class="javax.swing.JButton" binding="companyName">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font size="14" style="1"/>
+                  <foreground color="-1"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <opaque value="false"/>
+                  <requestFocusEnabled value="false"/>
+                  <text value="公司名称"/>
+                </properties>
+              </component>
+              <component id="c36c" class="javax.swing.JTextField" binding="companyNameField">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-15111791"/>
+                  <caretColor color="-131073"/>
+                  <font style="1"/>
+                  <foreground color="-131073"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="a79aa" class="javax.swing.JTextField" binding="personalNameField">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-15111791"/>
+                  <caretColor color="-1"/>
+                  <disabledTextColor color="-1"/>
+                  <font style="1"/>
+                  <foreground color="-1"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="d8df1" class="javax.swing.JButton" binding="phone">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font size="14" style="1"/>
+                  <foreground color="-1"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <text value="手机"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+              <component id="23682" class="javax.swing.JTextField" binding="phoneField">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-15111791"/>
+                  <caretColor color="-1"/>
+                  <font style="1"/>
+                  <foreground color="-1"/>
+                </properties>
+              </component>
+              <component id="813ea" class="javax.swing.JTextField" binding="webField">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="7" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-15111791"/>
+                  <caretColor color="-1"/>
+                  <foreground color="-1"/>
+                </properties>
+              </component>
+              <component id="3377e" class="javax.swing.JButton" binding="web">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <focusPainted value="false"/>
+                  <font size="14" style="1"/>
+                  <foreground color="-131073"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <text value="网页"/>
+                </properties>
+              </component>
+              <component id="cf2c8" class="javax.swing.JButton" binding="position">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font size="14" style="1"/>
+                  <foreground color="-1"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <text value="职位"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+              <component id="aab59" class="javax.swing.JButton" binding="tel">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font size="14" style="1"/>
+                  <foreground color="-1"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <opaque value="false"/>
+                  <requestFocusEnabled value="false"/>
+                  <text value="电话"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+              <component id="dbc54" class="javax.swing.JButton" binding="address">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font style="1"/>
+                  <foreground color="-1"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <opaque value="false"/>
+                  <requestFocusEnabled value="false"/>
+                  <text value="公司地址"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+              <component id="eb10a" class="javax.swing.JButton" binding="eMai">
+                <constraints>
+                  <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font size="14" style="1"/>
+                  <foreground color="-1"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <requestFocusEnabled value="false"/>
+                  <text value="E-mail"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                  <visible value="true"/>
+                </properties>
+              </component>
+              <component id="28ba5" class="javax.swing.JButton" binding="personalname">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-131073"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <enabled value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font size="14" style="1"/>
+                  <foreground color="-1"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <requestFocusEnabled value="false"/>
+                  <text value="姓名"/>
+                </properties>
+              </component>
+              <component id="bdcf" class="javax.swing.JButton" binding="fixButton">
+                <constraints>
+                  <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="60" height="25"/>
+                    <preferred-size width="60" height="25"/>
+                    <maximum-size width="60" height="25"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <focusPainted value="true"/>
+                  <font size="12" style="1"/>
+                  <foreground color="-1"/>
+                  <text value="修改"/>
+                </properties>
+              </component>
+              <component id="daa82" class="javax.swing.JButton" binding="saveButton">
+                <constraints>
+                  <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="60" height="25"/>
+                    <preferred-size width="60" height="25"/>
+                    <maximum-size width="60" height="25"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentAreaFilled value="false"/>
+                  <font size="12" style="1"/>
+                  <foreground color="-1"/>
+                  <text value="保存"/>
+                </properties>
+              </component>
+              <component id="a4786" class="javax.swing.JButton" binding="deButton">
+                <constraints>
+                  <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="60" height="25"/>
+                    <preferred-size width="60" height="25"/>
+                    <maximum-size width="60" height="25"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentAreaFilled value="false"/>
+                  <font size="12" style="1"/>
+                  <foreground color="-1"/>
+                  <text value="删除"/>
+                </properties>
+              </component>
+              <component id="36661" class="javax.swing.JButton" binding="coButton">
+                <constraints>
+                  <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="60" height="25"/>
+                    <preferred-size width="60" height="25"/>
+                    <maximum-size width="60" height="25"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentAreaFilled value="false"/>
+                  <font size="12" style="1"/>
+                  <foreground color="-1"/>
+                  <text value="收藏"/>
+                </properties>
+              </component>
+              <component id="b6f6c" class="javax.swing.JButton" binding="cancel">
+                <constraints>
+                  <grid row="5" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="60" height="25"/>
+                    <preferred-size width="60" height="25"/>
+                    <maximum-size width="60" height="25"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <contentAreaFilled value="false"/>
+                  <foreground color="-1"/>
+                  <text value="取消"/>
+                </properties>
+              </component>
+              <component id="b34f7" class="javax.swing.JTextField" binding="eMailField">
+                <constraints>
+                  <grid row="3" column="3" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-15111791"/>
+                  <caretColor color="-131073"/>
+                  <font style="1"/>
+                  <foreground color="-1"/>
+                </properties>
+              </component>
+              <component id="51fe4" class="javax.swing.JTextField" binding="addressField">
+                <constraints>
+                  <grid row="2" column="3" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-15111791"/>
+                  <caretColor color="-131073"/>
+                  <font style="1"/>
+                  <foreground color="-1"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="72d6d" class="javax.swing.JTextField" binding="telField">
+                <constraints>
+                  <grid row="1" column="3" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-15111791"/>
+                  <caretColor color="-131073"/>
+                  <font style="1"/>
+                  <foreground color="-1"/>
+                </properties>
+              </component>
+              <component id="31eb6" class="javax.swing.JTextField" binding="positionField">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-15111791"/>
+                  <caretColor color="-1"/>
+                  <font style="1"/>
+                  <foreground color="-1"/>
+                </properties>
+              </component>
+              <hspacer id="c1fa">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <hspacer id="f5a9b">
+                <constraints>
+                  <grid row="3" column="8" row-span="1" col-span="6" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <hspacer id="58cf6">
+                <constraints>
+                  <grid row="4" column="10" row-span="1" col-span="4" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <hspacer id="41ba7">
+                <constraints>
+                  <grid row="5" column="10" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <hspacer id="8394c">
+                <constraints>
+                  <grid row="2" column="8" row-span="1" col-span="6" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <hspacer id="b7457">
+                <constraints>
+                  <grid row="0" column="8" row-span="1" col-span="6" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <component id="8fd04" class="javax.swing.JButton" binding="fax">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <font size="14" style="1"/>
+                  <foreground color="-1"/>
+                  <opaque value="false"/>
+                  <requestFocusEnabled value="false"/>
+                  <text value="传真"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

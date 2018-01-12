@@ -107,8 +107,7 @@
                         <item value="全部"/>
                         <item value="姓名"/>
                         <item value="手机"/>
-                        <item value="电话"/>
-                        <item value="传真"/>
+                        <item value="公司"/>
                       </model>
                       <opaque value="true"/>
                       <popupVisible value="false"/>
@@ -223,7 +222,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="67d" class="javax.swing.JButton" binding="add">
+                      <component id="67d" class="javax.swing.JButton" binding="buttonAdd">
                         <constraints/>
                         <properties>
                           <autoscrolls value="true"/>
@@ -246,7 +245,7 @@
                           <preferredSize width="22" height="22"/>
                           <pressedIcon value="icon_addcard.png"/>
                           <requestFocusEnabled value="true"/>
-                          <rolloverEnabled value="false"/>
+                          <rolloverEnabled value="true"/>
                           <rolloverIcon value="icon_addcard.png"/>
                           <rolloverSelectedIcon value="icon_addcard.png"/>
                           <selectedIcon value="icon_addcard.png"/>

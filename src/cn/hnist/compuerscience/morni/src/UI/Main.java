@@ -5,8 +5,7 @@ package UI;
  * @update 2017.12.21 鼠标拖动事件 搜索按钮监听
  * @UPDATA 2017.12.24 完善搜索按钮监听,添加增加按钮
  */
-
-import UI.Dialog.addDialog;
+import UI.Dialog.CardDialog;
 import UI.Panel.*;
 import ecardlogic.CardManager;
 import resource.ImageSource;
@@ -15,22 +14,28 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 public class Main {
 
     //添加名片
-    JPanel registerPanel = new registerPanel().init();
+     public RegisterPanel registerPanel = new RegisterPanel();
     //搜索结果
-    JPanel resultPanel = new ResultPanel().init();
+    public ResultPanel resultPanel = new ResultPanel();
     //鼠标坐标
     private int xOld = 0, yOld = 0;
+    //四个Panel管理器
+    public HomePanel home = new HomePanel();
+    public AllPanel all = new AllPanel();
+    public UserPanel user = new UserPanel();
+    public LikePanel like =new LikePanel();
     //四个Panel
-    public JPanel homePanel = new HomePanel().panel;
-    public JPanel allPanel = new AllPanel().panel;
-    public JPanel userPanel = new UserPanel().panel;
-    public JPanel likePanel = new LikePanel().panel;
+    public JPanel homePanel = home.getPanel();
+    public JPanel allPanel = all.getPanel();
+    public JPanel userPanel = user.panel;
+    public JPanel likePanel = like.getPanel();
     //加载 CardManager类
-    private CardManager cardManager = CardManager.getManager();
+    public static CardManager cardManager = CardManager.getManager();
     //控件
     private JPanel mainpanel;
     private JButton buttonWindowsMin;
@@ -52,23 +57,40 @@ public class Main {
     private JPanel mainContainPanel;
     public JPanel topPanel;
     public JPanel containPanel;
-    private JButton add;
+    private JButton buttonAdd;
     //静态类
     public static Main main = new Main();
     public static JFrame frame = new JFrame("Main");
 
     //入口方法
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //防止线程问题
         EventQueue.invokeLater(() -> {
             try {
+                dataInit();
                 uiInit();
                 buttonsActonListener();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
+    }
 
+    //初始化数据，用户信息
+    private static void dataInit() throws IOException, ClassNotFoundException {
+        cardManager.readCard();
+        //初始化ALL面板
+        for (int i = 0; i <cardManager.getcardArrayList().size() ; i++) {
+            main.all.model.addElement(cardManager.getcardArrayList().get(i).toString());
+        }
+        //初始化Like面板
+        for (int i = 0; i <cardManager.getLikeArrayList().size() ; i++) {
+            main.all.model.addElement(cardManager.getLikeArrayList().get(i).toString());
+        }
+        for (int i = 0; i <cardManager.getcardArrayList().size() ; i++) {
+            if(cardManager.getcardArrayList().get(i).openTimes>0)
+                main.home.model.addElement(cardManager.getcardArrayList().get(i).toString());
+        }
 
     }
 
@@ -77,13 +99,13 @@ public class Main {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException
                 | UnsupportedLookAndFeelException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         frame.setContentPane(main.mainpanel);
         //设定启动时在屏幕的位置
         frame.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width / 2 - 250, Toolkit.getDefaultToolkit().getScreenSize().height / 2 - 250);
         //设置windows客户区
+        frame.setIconImage(frame.getToolkit().getImage("/cardicon5.png"));
         frame.setUndecorated(true);
         //设置窗口不可变大小
         frame.setResizable(false);
@@ -95,7 +117,7 @@ public class Main {
         main.containPanel.add(main.homePanel);
         main.containPanel.updateUI();
         frame.setVisible(true);
-        addDialog.startDialog();
+       // addDialog.startDialog();
 
     }
 
@@ -118,6 +140,15 @@ public class Main {
                 main.buttonList.setIcon(ImageSource.ICON_LIST_UN);
                 main.buttonLike.setIcon(ImageSource.ICON_LIKE_UN);
                 main.buttonUser.setIcon(ImageSource.ICON_USER_UN);
+                if (!RegisterPanel.flag) {
+                    main.containPanel.removeAll();
+                    main.containPanel.add(main.homePanel);
+                    main.containPanel.updateUI();
+                } else {
+                    main.containPanel.removeAll();
+                    main.containPanel.add(main.registerPanel.getPanel());
+                    main.containPanel.updateUI();
+                }
                 if (!ResultPanel.flag) {
                     main.containPanel.removeAll();
                     main.containPanel.add(main.homePanel);
@@ -127,8 +158,13 @@ public class Main {
                      * 此处为了使界面更加人性化，搜索按钮和添加都放在了主页上
                      */
                     main.containPanel.removeAll();
-                    main.containPanel.add(main.resultPanel);
+                    main.containPanel.add(main.resultPanel.getPanel());
                     main.containPanel.updateUI();
+                }
+                main.home.model.removeAllElements();
+                for (int i = 0; i <cardManager.getcardArrayList().size() ; i++) {
+                    if(cardManager.getcardArrayList().get(i).openTimes>0)
+                        main.home.model.addElement(cardManager.getcardArrayList().get(i).toString());
                 }
             }
         });
@@ -140,7 +176,12 @@ public class Main {
                 main.buttonList.setIcon(ImageSource.ICON_LIST_EN);
                 main.buttonLike.setIcon(ImageSource.ICON_LIKE_UN);
                 main.buttonUser.setIcon(ImageSource.ICON_USER_UN);
+                //重新初始化
+                main.all.model.removeAllElements();
+                for (int i = 0; i <cardManager.getcardArrayList().size() ; i++) {
 
+                    main.all.model.addElement(cardManager.getcardArrayList().get(i).toString());
+                }
                 main.containPanel.removeAll();
                 main.containPanel.add(main.allPanel);
                 main.containPanel.updateUI();
@@ -153,7 +194,11 @@ public class Main {
                 main.buttonList.setIcon(ImageSource.ICON_LIST_UN);
                 main.buttonLike.setIcon(ImageSource.ICON_LIKE_EN);
                 main.buttonUser.setIcon(ImageSource.ICON_USER_UN);
+                main.like.model.removeAllElements();
+                for (int i = 0; i <cardManager.getLikeArrayList().size() ; i++) {
 
+                    main.like.model.addElement(cardManager.getLikeArrayList().get(i).toString());
+                }
                 main.containPanel.removeAll();
                 main.containPanel.add(main.likePanel);
                 main.containPanel.updateUI();
@@ -301,7 +346,7 @@ public class Main {
 
 
         //搜索按钮
-        main.buttonSearch.addActionListener(event -> {
+        main.buttonSearch.addActionListener((ActionEvent event) -> {
 
             String key = main.keyChoice.getModel().getSelectedItem().toString();
             if (!(main.searchField.getText().equals("") || main.searchField.getText().equals("请输入搜索内容"))) {
@@ -313,14 +358,29 @@ public class Main {
                 main.buttonLike.setIcon(ImageSource.ICON_LIKE_UN);
                 main.buttonUser.setIcon(ImageSource.ICON_USER_UN);
                 main.containPanel.removeAll();
-                main.containPanel.add(main.resultPanel);
+                main.containPanel.add(main.resultPanel.getPanel());
                 main.containPanel.updateUI();
-                ResultPanel.flag = true;
                 String keyword = main.searchField.getText();
+                main.resultPanel.searchResultManager(key, keyword, cardManager.getcardArrayList());
             }
+            ResultPanel.flag = true;
+            RegisterPanel.flag = false;
             //// TODO: 未完成
         });
         //回车搜索
+
+        //添加按钮
+        main.buttonAdd.addActionListener((ActionEvent event) -> {
+            main.buttonHome.setIcon(ImageSource.ICON_HOME_EN);
+            main.buttonList.setIcon(ImageSource.ICON_LIST_UN);
+            main.buttonLike.setIcon(ImageSource.ICON_LIKE_UN);
+            main.buttonUser.setIcon(ImageSource.ICON_USER_UN);
+            main.containPanel.removeAll();
+            main.containPanel.add(main.registerPanel.getPanel());
+            main.containPanel.updateUI();
+            RegisterPanel.flag = true;
+            ResultPanel.flag = false;
+        });
     }
 
 
